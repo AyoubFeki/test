@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Run unit tests
-          command: pytest emp_management_test.py
+          command: python -m unittest emp_management_test
       - run:
           name: Run integration tests
-          command: pytest emp_management_integtest.py
+          command: python -m unittest emp_management_integtest.py
