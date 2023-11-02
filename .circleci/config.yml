@@ -1,0 +1,16 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.11.6
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: Run unit tests
+          command: pytest emp_management_test.py
+      - run:
+          name: Run integration tests
+          command: pytest emp_management_integtest.py
